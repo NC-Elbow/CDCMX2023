@@ -1,3 +1,5 @@
+module ImageTools
+
 using Dates, LinearAlgebra
 using Plots, CSV, DataFrames
 using MAT, Images, ImageShow 
@@ -140,3 +142,5 @@ end
 #=
 ffmpeg -r 20 -i 1%3d.png -pix_fmt yuv420p test.mp4
 =#
+
+end #module
