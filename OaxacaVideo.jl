@@ -59,9 +59,13 @@ slowly say with 200 images
 for k = 0:200
     tempimg = showSuperPosedImage(bigIMG, newIMG, k/200)
     tempname = string(1000+k,".jpg")[2:end] #gives a three digit counter starting with 000.jpg
-    save(string("/home/clark/CDCMX/images/img2scenes/",tempname), tempimg)
+    save(string("/home/clark/CDCMX/images/img2scenes/",tempname), clamp01nan.(tempimg))
 end    
 
+for k=201:230
+    tempname = string(k,".jpg")
+    save(string("/home/clark/CDCMX/images/img2scenes/",tempname),clamp01nan.(newIMG))
+end
 #=
 now ffmpeg to make a short  video
 =#
